@@ -1,0 +1,28 @@
+.checkbox-container {
+	color: white;
+}
+
+.model-info-container {
+	height: 50%;
+	background-color: black;
+}
+
+.model-score-container {
+	height: 50%;
+	position: relative;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-circle {
+	width: 50%;
+	height: 50%;
+	margin: auto;
+}
+
+.right-side-container {
+	height: 100px;
+}
