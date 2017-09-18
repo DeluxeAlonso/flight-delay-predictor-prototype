@@ -9,6 +9,7 @@ APP.FlightScreen.prototype = Object.create(APP.BaseScreen.prototype);
 
 APP.FlightScreen.prototype.setupUI = function () {
   this.evalBtn = $('.eval-btn');
+  this.footerDiv = $('.footer-container');
   container = ".score-circle";
   this.bar = new ProgressBar.Circle(container, {
 	  color: '#aaa',
@@ -20,7 +21,7 @@ APP.FlightScreen.prototype.setupUI = function () {
 	    autoStyleContainer: false
 	  },
 	  from: { color: '#aaa', width: 1 },
-	  to: { color: '#333', width: 4 },
+	  to: { color: '#a4a3bf', width: 4 },
 	  step: function(state, circle) {
 	    circle.path.setAttribute('stroke', state.color);
 	    circle.path.setAttribute('stroke-width', state.width);
@@ -42,5 +43,6 @@ APP.FlightScreen.prototype.listeners = function () {
 };
 
 APP.FlightScreen.prototype.evalBtnHandler = function () {
-  this.bar.animate(1);
+  this.bar.animate(0.75);
+  this.footerDiv.fadeIn('slow');
 };

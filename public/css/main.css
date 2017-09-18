@@ -17,6 +17,41 @@
     align-items: center;
 }
 
+.title-container {
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #a4a3bf;
+    margin-bottom: 20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-top {
+	margin: auto;
+	width: 200px;
+	color: #a4a3bf;
+}
+
+.footer-container {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 40px;
+	border-top: 1px solid #a4a3bf;
+    margin-top: 20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-bottom {
+	margin: auto;
+	color: #a4a3bf;
+}
+
 .score-circle {
 	width: 50%;
 	height: 50%;
