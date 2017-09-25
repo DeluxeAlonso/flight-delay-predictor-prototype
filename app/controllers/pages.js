@@ -2,7 +2,15 @@ var _ = require('lodash');
 var request = require('request');
 
 exports.flight = function (req,res){
-  return res.render('pages/flight', {});
+  global.db.Airport.findAll().then(function(airports) {
+    var airportNames = airports.map(function(obj){               
+            return obj.name;
+    });
+    console.log(airportNames)
+    return res.render('pages/flight', {
+      airports: airportNames
+    });
+  });
 }
 
 exports.findFlightScore = function (req, res) {

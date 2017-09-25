@@ -4,52 +4,77 @@
 		<div class="form_w3layouts">
 			<div action="#" method="post" class="agile_form">
 				<div class="checkin agileits-left">
-				    <input placeholder="Fecha" class="date" id="datepicker" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
+					<label class="input-label">Fecha</label>
+				    <input placeholder="" class="flight-input date" id="datepicker" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" required=""/>
 				</div>
 				<div class="agileits-left s2-w3ls">
-					<input type="text" name="name" class="departure" placeholder="Hora de despegue" required="">
+					<label class="input-label">Hora de despegue</label>
+					<input type="text" name="name" class="flight-input departure" placeholder="" required="">
 				</div>
 				<div class="clear"></div>
 				<div class="agileits-left">
-					<input type="text" name="name" class="originAirport" placeholder="Aeropuerto de origen" required="">
+					<label class="input-label">Aeropuerto de origen</label>
+					<input type="text" name="name" class="flight-input originAirport awesomplete" list="airport-list" placeholder="" required="">
+					<datalist id="airport-list">
+						{% for airport in airports %}
+			            	<option>{{airport}}</option>
+			          	{% endfor %}
+					</datalist>
 				</div>
 				<div class="agileits-left s2-w3ls">
-					<input type="text" name="name" class="destAirport" placeholder="Aeropuerto de destino" required="">
+					<label class="input-label">Aeropuerto de destino</label>
+					<input type="text" name="name" class="flight-input destAirport awesomplete" list="airport-list" placeholder="" required="">
 				</div>
 				<div class="clear"></div>
 				<div class="agileits-left">
-					<input type="text" name="name" class="flightNumber" placeholder="Número de vuelo" required="">
+					<label class="input-label">Número de vuelo</label>
+					<input type="text" name="name" class="flight-input flightNumber" placeholder="" required="">
 				</div>
 				<div class="agileits-left s2-w3ls">
-					<input type="text" name="name" class="tailNumber" placeholder="Número de cola del avión" required="">
+					<label class="input-label">Número de cola del avión</label>
+					<input type="text" name="name" class="flight-input tailNumber" placeholder="" required="">
 				</div>	
 				<div class="clear"></div>
 				<div class="agileits-left">
-					<input type="text" name="name" class="estimatedTime" placeholder="Tiempo estimado de vuelo" required="">
-				</div>	
-
-				<div class="clear"></div>
-				<div class="agileits-left">
-					<input type="text" name="name" class="temp" placeholder="Temperatura(F)" required="">
-				</div>
-				<div class="agileits-left s2-w3ls">
-					<input type="text" name="name" class="skyCondition" placeholder="Condición del cielo" required="">
-				</div>
-
-				<div class="clear"></div>
-				<div class="agileits-left">
-					<input type="text" name="name" class="windSpeed" placeholder="Velocidad del viento" required="">
-				</div>
-				<div class="agileits-left s2-w3ls">
-					<input type="text" name="name" class="pressure" placeholder="Presión" required="">
+					<label class="input-label">Tiempo estimado de vuelo</label>
+					<input type="text" name="name" class="flight-input estimatedTime" placeholder="" required="">
 				</div>	
 
 				<div class="clear"></div>
 				<div class="agileits-left">
-					<input type="text" name="name" class="humidity" placeholder="Humedad" required="">
+					<label class="input-label">Temperatura (F)</label>
+					<input type="text" name="name" class="flight-input temp" placeholder="" required="">
 				</div>
 				<div class="agileits-left s2-w3ls">
-					<input type="text" name="name" class="altimeter" placeholder="Altímetro" required="">
+					<label class="input-label">Condición del cielo</label>
+					<select class="input-select skyCondition" required>
+						<option value="">Selecciona una condición</option>
+						<option value="CLR">CLR</option>
+						<option value="BKN">BKN</option>
+						<option value="SCT">SCT</option>
+						<option value="OVC">OVC</option>
+						<option value="FEW">FEW</option>
+					</select>
+				</div>
+
+				<div class="clear"></div>
+				<div class="agileits-left">
+					<label class="input-label">Velocidad del viento</label>
+					<input type="text" name="name" class="flight-input windSpeed" placeholder="" required="">
+				</div>
+				<div class="agileits-left s2-w3ls">
+					<label class="input-label">Presión</label>
+					<input type="text" name="name" class="flight-input pressure" placeholder="" required="">
+				</div>	
+
+				<div class="clear"></div>
+				<div class="agileits-left">
+					<label class="input-label">Humedad</label>
+					<input type="text" name="name" class="flight-input humidity" placeholder="" required="">
+				</div>
+				<div class="agileits-left s2-w3ls">
+					<label class="input-label">Altímetro</label>
+					<input type="text" name="name" class="flight-input altimeter" placeholder="" required="">
 				</div>	
 
 				<div class="clear"></div>
@@ -62,11 +87,8 @@
 					<input type="checkbox" name="mist" class="mist" required="required"><i></i><label>Neblina</label>
 					<input type="checkbox" name="freezing" class="freezing" required="required"><i></i><label>Congelamiento</label>
 				</div>	
-
 				<div class="clear"></div>
-				<div class="submit">
-					<input class="eval-btn" type="submit" value="Evaluar">
-				</div> 
+
 			</div>	
 	</div>
 	</div>
@@ -81,7 +103,7 @@
 			</div>
 		</div>
 		<div class="model-info-container">
-			<div class="button_base b05_3d_roll">
+			<div class="eval-btn button_base b05_3d_roll">
 		        <div>Evaluar</div>
 		        <div>Evaluar</div>
 		    </div>
@@ -91,10 +113,14 @@
 </div>
 <link rel="stylesheet" href="css/jquery-ui.css" />
 <link rel="stylesheet" href="css/jquery.timepicker.css">
+<link rel="stylesheet" href="css/awesomplete.css">
+<link rel="stylesheet" href="css/alertify.css">
 {% block scripts %}
 <script src="js/jquery-ui.js"></script>
 <script src="js/progressbar.min.js"></script>
 <script src='js/jquery.timepicker.js'></script>
+<script src='js/awesomplete.js'></script>
+<script src='js/alertify.js'></script>
 <script>
 	$(function() {
 		$( "#datepicker,#datepicker1" ).datepicker({ dateFormat: 'dd/mm/yy' });
