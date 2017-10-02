@@ -53,7 +53,7 @@ APP.FlightScreen.prototype.setupProgressBar = function () {
 	  text: {
 	    autoStyleContainer: false
 	  },
-	  from: { color: '#a4a3bf', width: 1 },
+	  from: { color: '#00FF00', width: 1 },
 	  to: { color: '#FF0000', width: 4 },
 	  step: function(state, circle) {
 	    circle.path.setAttribute('stroke', state.color);
